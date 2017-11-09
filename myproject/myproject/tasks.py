@@ -1,6 +1,6 @@
 from functools import wraps
 
-from myproject.celeryconf import app
+from .celeryconf import app
 from .models import Job
 
 
