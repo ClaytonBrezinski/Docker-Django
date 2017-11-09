@@ -1,9 +1,9 @@
 Django==1.9.8
 
-celery==3.1.20
+celery==4.1
 
-djangorestframework==3.3.1
+djangorestframework==3.7
 
-psycopg2==2.5.3
+psycopg2==2.7.3
 
-redis==2.10.5
+redis==2.10.6
