@@ -5,14 +5,14 @@ class Job(models.Model):
     TYPES = (
         ('fibonacci', 'fibonacci'),
         ('power', 'power'),
-    )
+        )
 
     STATUSES = (
         ('pending', 'pending'),
         ('started', 'started'),
         ('finished', 'finished'),
         ('failed', 'failed'),
-    )
+        )
 
     type = models.CharField(choices=TYPES, max_length=20)
     status = models.CharField(choices=STATUSES, max_length=20)

@@ -19,6 +19,7 @@ def update_job(fn):
             job.result = None
             job.status = 'failed'
             job.save()
+
     return wrapper
 
 
@@ -45,7 +46,8 @@ def _fib(n):
     else:
         return _fib(n - 1) + _fib(n - 2)
 
+
 TASK_MAPPING = {
     'power': power,
     'fibonacci': fib
-}
+    }

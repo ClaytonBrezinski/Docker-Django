@@ -2,7 +2,6 @@ import os
 
 from kombu import Exchange, Queue
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -25,7 +24,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
 
-)
+    )
 
 MIDDLEWARE_CLASSES = (
 )
@@ -33,7 +32,7 @@ MIDDLEWARE_CLASSES = (
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGINATE_BY': 10
-}
+    }
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -64,8 +63,8 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_ENV_POSTGRES_PASSWORD', 'postgres'),
         'HOST': os.environ.get('DB_PORT_5432_TCP_ADDR', 'db'),
         'PORT': os.environ.get('DB_PORT_5432_TCP_PORT', ''),
-    },
-}
+        },
+    }
 
 # Redis
 
@@ -82,10 +81,10 @@ BROKER_URL = os.environ.get('BROKER_URL',
                             '')
 if not BROKER_URL:
     BROKER_URL = 'amqp://{user}:{password}@{hostname}/{vhost}/'.format(
-        user=os.environ.get('RABBIT_ENV_USER', 'admin'),
-        password=os.environ.get('RABBIT_ENV_RABBITMQ_PASS', 'mypass'),
-        hostname=RABBIT_HOSTNAME,
-        vhost=os.environ.get('RABBIT_ENV_VHOST', ''))
+            user=os.environ.get('RABBIT_ENV_USER', 'admin'),
+            password=os.environ.get('RABBIT_ENV_RABBITMQ_PASS', 'mypass'),
+            hostname=RABBIT_HOSTNAME,
+            vhost=os.environ.get('RABBIT_ENV_VHOST', ''))
 
 # We don't want to have dead connections stored on rabbitmq, so we have to negotiate using heartbeats
 BROKER_HEARTBEAT = '?heartbeat=30'
@@ -101,7 +100,7 @@ BROKER_CONNECTION_TIMEOUT = 10
 CELERY_DEFAULT_QUEUE = 'default'
 CELERY_QUEUES = (
     Queue('default', Exchange('default'), routing_key='default'),
-)
+    )
 
 # Sensible settings for celery
 CELERY_ALWAYS_EAGER = False
