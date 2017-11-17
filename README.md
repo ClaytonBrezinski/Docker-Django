@@ -22,7 +22,7 @@ Using *build* install the requirements and preform the admin work specified with
 docker-compose build
 ```
 At this point you may run into the issue of Docker not being able to see the required drives on your machine. Follow the information here:
-- https://stackoverflow.com/a/43527876
+- https://stackoverflow.com/a/43904051
 - https://blog.olandese.nl/2017/05/03/solve-docker-for-windows-error-a-firewall-is-blocking-file-sharing-between-windows-and-the-containers/
 
 Once past this, you can turn on all of the docker containers at once using
