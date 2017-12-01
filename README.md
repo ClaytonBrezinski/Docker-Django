@@ -1,5 +1,9 @@
 # Docker-Django
-A base [Docker](https://www.docker.com/) image which utilizes a separate container for Django's web environment, the postgreSQL database, the rabbitMQ task scheduler, and each of the celery workers
+A base [Docker](https://www.docker.com/) image which utilizes a separate
+ container for Django's web environment, the postgreSQL database, the
+ rabbitMQ task scheduler, and each of the celery workers.
+The postgreSQL database is an external container to the project which
+allows for the database to persist between running docker instances.
 
 ## Requirements
 - [Docker](https://www.docker.com/)

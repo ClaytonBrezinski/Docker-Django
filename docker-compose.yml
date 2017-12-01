@@ -9,6 +9,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+    volumes:
+      - mypostgresdb:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -61,3 +63,7 @@ services:
       - redis
     depends_on:
       - rabbit
+
+volumes:
+  mypostgresdb:
+      external: true
